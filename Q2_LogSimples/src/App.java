@@ -10,5 +10,9 @@ public class App {
         for(String m:log){
             System.out.println(m);
         }
+
+        for(String m:log2){
+            System.out.println(m);
+        }
     }
 }
