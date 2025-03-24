@@ -1,10 +1,9 @@
-public class HistoryDecorator extends DadoDecorator {
+public class HistoryDecorator implements Dado {
     private DadoDecorator dado;
     private int[] historico;
     private int index;
 
-    public HistoryDecorator(DadoDecorator dado, int lados) {
-        super(lados);
+    public HistoryDecorator(Dado dado, int lados) {
         this.dado = dado;
         this.historico = new int[10];
         this.index = 0;
