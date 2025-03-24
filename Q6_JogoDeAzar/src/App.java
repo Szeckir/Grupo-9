@@ -1,10 +1,12 @@
 public class App {
     public static void main(String[] args) {
-        Dado d6 = new Dado(6);
-        Dado d20 = new Dado(20);
-        d6.rolar();
-        d20.rolar();
-        System.out.println("D6: " + d6.getValor());
-        System.out.println("D20: " + d20.getValor());
+        DadoDecorator d6 = new DadoDecorator(6);
+        HistoryDecorator hd6 = new HistoryDecorator(d6, 20);
+
+        hd6.rolar();
+        hd6.rolar();
+        hd6.rolar();
+
+        hd6.getHistorico();
     }
 }
