@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FonteDeDados{
-    private List<Observer> observadores;
+    private List<iObserver> observadores;
     private List<Integer> lst;
 
     public FonteDeDados(){
@@ -24,12 +24,12 @@ public class FonteDeDados{
         return new ArrayList<>(lst);
     }
 
-    public void addObserver(Observer observer)
+    public void addObserver(iObserver observer)
     observadores.add(observer);
 }
 
     public void notificar(){
-        for(Observer observer : observadores){
+        for(iObserver observer : observadores){
             observadores.atualizar(get.valores());
         }
     }

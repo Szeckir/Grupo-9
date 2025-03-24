@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class VisualizadorDeSomatorio implements Observer{
+public class VisualizadorDeSomatorio implements iObserver{
 
     public void atualizar(List<Integer> valores){
         Integer soma = valores.stream()

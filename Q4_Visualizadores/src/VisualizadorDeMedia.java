@@ -1,6 +1,6 @@
 import java.util.List;
 
-public class VisualizadorDeMedia implements Observer{
+public class VisualizadorDeMedia implements iObserver{
 
     public void atualizar(List<Integer> valores){
         double media = valores.stream()
