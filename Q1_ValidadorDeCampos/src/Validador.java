@@ -7,9 +7,9 @@ public class Validador{
     private final Map<Tipo, ValidadorStrategy> strategy = new HashMap<>();
 
     public Validador() {
-        strategy.put(Tipo.EMAIL, new EmailValidador());
-        strategy.put(Tipo.INTEIRO, new InteiroValidador());
-        strategy.put(Tipo.MATRICULA, new MatriculaValidador());
+        strategy.put(Tipo.EMAIL, new ValidacaoEmail());
+        strategy.put(Tipo.INTEIRO, new ValidacaoInteiro());
+        strategy.put(Tipo.MATRICULA, new ValidacaoMatricula());
     }
 
     public boolean valida(Tipo tipo, String valor) {
