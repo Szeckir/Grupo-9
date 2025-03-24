@@ -3,7 +3,7 @@ public class HistoryDecorator implements Dado {
     private int[] historico;
     private int index;
 
-    public HistoryDecorator(DadoDecorator dado, int lados) {
+    public HistoryDecorator(Dado dado, int lados) {
         this.dado = dado;
         this.historico = new int[10];
         this.index = 0;
