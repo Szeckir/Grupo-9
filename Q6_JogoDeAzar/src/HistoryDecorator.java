@@ -1,20 +1,22 @@
-public class HistoryDecorator implements Dado {
-    private DadoDecorator dado;
+public class HistoryDecorator implements Interface {
+    private Interface dado;
     private int[] historico;
     private int index;
 
-    public HistoryDecorator(Dado dado, int lados) {
-        this.dado = dado;
+    public HistoryDecorator(Interface dado) {
+        this.dado = dado; 
         this.historico = new int[10];
         this.index = 0;
     }
 
+    @Override
     public void rolar() {
         dado.rolar();
-        historico[index] = dado.getValor();
-        index = index + 1;
+        historico[index] = dado.getValor(); 
+        index = (index + 1) % historico.length; 
     }
 
+    @Override
     public int getValor() {
         return dado.getValor();
     }
