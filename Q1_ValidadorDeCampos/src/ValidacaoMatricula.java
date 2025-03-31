@@ -1,18 +1,20 @@
 public class ValidacaoMatricula implements ValidadorStrategy {
     @Override
-    public boolean valida(String valor) {
-        if (!valida(Tipo.INTEIRO,valor)){
-            return false;
-        }else{
-            int sum = 0;
-            for(int i=0;i<valor.length()-1;i++){
-                sum += Character.getNumericValue(valor.charAt(i));
-            }
-            int verificador = sum%10;
-            if (verificador == Character.getNumericValue(valor.charAt(valor.length()-1))){
-                return true;
+    public boolean validar(String valor) {
+        // Verifica se todos os caracteres são dígitos
+        for (int i = 0; i < valor.length(); i++) {
+            if (!Character.isDigit(valor.charAt(i))) {
+                return false;
             }
         }
-        return false;
+
+        if (valor.length() < 2) return false;
+
+        int soma = 0;
+        for (int i = 0; i < valor.length() - 1; i++) {
+            soma += Character.getNumericValue(valor.charAt(i));
+        }
+        int verificador = soma % 10;
+        return verificador == Character.getNumericValue(valor.charAt(valor.length() - 1));
     }
 }

@@ -1,3 +1,3 @@
 public interface ValidadorStrategy {
-    boolean valida(String valor);
+    boolean validar(String valor);
 }
